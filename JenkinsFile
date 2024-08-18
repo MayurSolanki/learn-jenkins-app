@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    // Comment
+    /* Block comment */
+    // add # Before Command to prevent Execution 
+
     stages {
         stage('Clean Workspace') {
             steps {
