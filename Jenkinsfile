@@ -6,12 +6,6 @@ pipeline {
     // add # Before Command to prevent Execution 
 
     stages {
-        stage('Clean Workspace') {
-            steps {
-                cleanWs() // Cleans up the workspace
-            }
-        }
-
         stage('Build') {
             agent {
                 docker {
