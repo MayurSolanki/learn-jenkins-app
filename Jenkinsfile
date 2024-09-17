@@ -45,6 +45,8 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'AWS-S3', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
                     sh '''
+                        echo "AWS_SECRET_ACCESS_KEY : $AWS_SECRET_ACCESS_KEY"
+                        echo "AWS_ACCESS_KEY_ID : $AWS_ACCESS_KEY_ID"
                         aws --version
                         aws s3 sync build s3://$AWS_S3_BUCKET
                     '''
